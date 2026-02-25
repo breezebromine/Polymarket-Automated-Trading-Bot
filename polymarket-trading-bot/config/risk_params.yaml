@@ -1,0 +1,25 @@
+# 风险管理参数配置
+
+# 仓位限制
+max_position_size: 1000  # 单个市场最大头寸(USD)
+max_total_exposure: 5000  # 总敞口限制(USD)
+
+# 损失限制
+daily_loss_limit: 500  # 每日最大亏损(USD)
+max_trades_per_day: 100  # 每日最大交易次数
+
+# 市场要求
+min_liquidity: 1000  # 最小市场流动性要求(USD)
+
+# 熔断器参数
+circuit_breaker:
+  enabled: true
+  max_consecutive_losses: 5  # 最大连续亏损次数
+  loss_threshold: 100  # 触发熔断的单次亏损阈值(USD)
+  cooldown_period: 3600  # 熔断后冷却时间(秒)
+
+# 仓位计算
+position_sizing:
+  method: fixed  # fixed(固定金额), kelly(凯利公式), risk_based(基于风险)
+  fixed_amount: 100  # 固定金额方法的每笔交易金额(USD)
+  risk_per_trade: 0.02  # 每笔交易的风险比例(2%)

@@ -1,0 +1,36 @@
+# 策略配置文件
+
+# 套利策略配置
+arbitrage:
+  # 基础参数
+  enabled: true
+  min_spread: 0.02  # 最小价差(2%)
+  min_profit: 0.5  # 最小预期利润(USD)
+  max_execution_time: 10  # 最大执行时间(秒)
+
+  # 费用和滑点
+  include_fees: true  # 是否考虑手续费
+  fee_rate: 0.001  # 手续费率(0.1%)
+  slippage_tolerance: 0.005  # 滑点容忍度(0.5%)
+
+  # 机会筛选
+  min_opportunity_score: 0.7  # 最小机会评分(0-1)
+  max_opportunities_per_cycle: 3  # 每个周期最多执行的机会数
+
+# 跨市场套利配置
+cross_market_arbitrage:
+  enabled: false  # 暂时禁用,需要更多开发
+  correlation_threshold: 0.8  # 市场相关性阈值
+  min_spread: 0.03  # 跨市场最小价差(3%)
+
+# 做市策略配置(未来扩展)
+market_making:
+  enabled: false
+  spread: 0.01  # 买卖价差
+  order_size: 100  # 订单大小(USD)
+
+# 趋势跟踪策略配置(未来扩展)
+trend_following:
+  enabled: false
+  lookback_period: 3600  # 回看周期(秒)
+  momentum_threshold: 0.05  # 动量阈值

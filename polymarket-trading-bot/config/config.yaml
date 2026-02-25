@@ -1,0 +1,39 @@
+# Polymarket自动交易程序配置文件
+
+# 系统配置
+system:
+  environment: development  # development, staging, production
+  debug: true
+  log_level: INFO  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+
+# API配置
+api:
+  polymarket:
+    base_url: https://clob.polymarket.com
+    ws_url: wss://ws-subscriptions-clob.polymarket.com
+    timeout: 30
+    max_retries: 3
+    retry_delay: 1.0
+
+  rate_limit:
+    requests_per_second: 10
+    burst_size: 20
+
+# 数据库配置
+database:
+  type: sqlite  # sqlite 或 postgresql
+  sqlite:
+    path: data/polymarket.db
+  postgresql:
+    host: localhost
+    port: 5432
+    database: polymarket
+    pool_size: 10
+
+# 交易配置
+trading:
+  enabled: false  # 是否启用自动交易
+  dry_run: true  # true时只模拟不实际交易
+  markets: []  # 监控的市场列表,空表示监控所有市场
+  update_interval: 5  # 数据更新间隔(秒)
+  order_timeout: 60  # 订单超时时间(秒)
