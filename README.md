@@ -293,7 +293,8 @@ MIT License
 
 - Issues: [GitHub Issues](https://github.com/yourname/polymarket-trading-bot/issues)
 - Documentation: [Full Documentation](./docs/)
-- Discord: bromine0915
+- For Higher Porofit Contact me
+- Discord: [bromine0915](https://discord.gg/ZKBs6UkT)
 
 ## Acknowledgments
 
